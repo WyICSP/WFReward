@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="WFRewardDetailIndexTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edu-oe-Uro">
+                        <rect key="frame" x="25.5" y="13.5" width="37" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woe-J7-v17">
+                        <rect key="frame" x="10" y="0.0" width="0.5" height="62"/>
+                        <color key="backgroundColor" red="0.89411764705882346" green="0.89411764705882346" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="0.5" id="8HW-dM-dTx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJv-ci-ANu">
+                        <rect key="frame" x="364.5" y="0.0" width="0.5" height="62"/>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="0.5" id="riQ-WO-o8r"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSh-PI-MsX">
+                        <rect key="frame" x="10.5" y="61.5" width="354" height="0.5"/>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.89411764709999997" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="KMn-z2-3hz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所有片区月使用率平均值40%-45%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWJ-jt-Egl">
+                        <rect key="frame" x="25.5" y="33.5" width="289" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWd-ei-z69">
+                        <rect key="frame" x="67.5" y="10.5" width="27.5" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.96862745100000003" green="0.52156862749999999" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WFReward.bundle/overLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3Bg-9L-6RQ">
+                        <rect key="frame" x="308.5" y="6" width="51" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="51" id="8ws-Pc-fqf"/>
+                            <constraint firstAttribute="width" secondItem="3Bg-9L-6RQ" secondAttribute="height" multiplier="51:50" id="PeU-8N-Z7t"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Woe-J7-v17" secondAttribute="bottom" id="0Ku-92-9gZ"/>
+                    <constraint firstItem="HWd-ei-z69" firstAttribute="leading" secondItem="edu-oe-Uro" secondAttribute="trailing" constant="5" id="1Gs-De-OpU"/>
+                    <constraint firstItem="HWd-ei-z69" firstAttribute="centerY" secondItem="edu-oe-Uro" secondAttribute="centerY" id="23Q-fz-by2"/>
+                    <constraint firstItem="kJv-ci-ANu" firstAttribute="leading" secondItem="nSh-PI-MsX" secondAttribute="trailing" id="7M5-4q-ifG"/>
+                    <constraint firstAttribute="bottom" secondItem="nSh-PI-MsX" secondAttribute="bottom" id="GZy-ev-Y5s"/>
+                    <constraint firstItem="nSh-PI-MsX" firstAttribute="leading" secondItem="Woe-J7-v17" secondAttribute="trailing" id="KkV-8g-TtC"/>
+                    <constraint firstItem="3Bg-9L-6RQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NPH-OP-frN"/>
+                    <constraint firstItem="kJv-ci-ANu" firstAttribute="leading" secondItem="3Bg-9L-6RQ" secondAttribute="trailing" constant="5" id="NdI-lh-d6s"/>
+                    <constraint firstItem="edu-oe-Uro" firstAttribute="leading" secondItem="Woe-J7-v17" secondAttribute="trailing" constant="15" id="Ugp-ht-VkA"/>
+                    <constraint firstItem="Woe-J7-v17" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VAQ-Q5-guV"/>
+                    <constraint firstItem="nSh-PI-MsX" firstAttribute="top" secondItem="QWJ-jt-Egl" secondAttribute="bottom" constant="13" id="Y4y-yE-Lz4"/>
+                    <constraint firstItem="edu-oe-Uro" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13.5" id="eYX-1p-8Ar"/>
+                    <constraint firstAttribute="trailing" secondItem="kJv-ci-ANu" secondAttribute="trailing" constant="10" id="eqR-mk-nDQ"/>
+                    <constraint firstAttribute="bottom" secondItem="kJv-ci-ANu" secondAttribute="bottom" id="exH-nB-kmB"/>
+                    <constraint firstItem="kJv-ci-ANu" firstAttribute="leading" secondItem="QWJ-jt-Egl" secondAttribute="trailing" constant="50" id="ho9-vI-zdE"/>
+                    <constraint firstItem="Woe-J7-v17" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="pD3-am-iuK"/>
+                    <constraint firstItem="QWJ-jt-Egl" firstAttribute="top" secondItem="edu-oe-Uro" secondAttribute="bottom" constant="5" id="rtf-sE-3Ka"/>
+                    <constraint firstItem="QWJ-jt-Egl" firstAttribute="leading" secondItem="edu-oe-Uro" secondAttribute="leading" id="t8o-6f-T5C"/>
+                    <constraint firstItem="kJv-ci-ANu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="u1R-0J-blh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bottomLine" destination="nSh-PI-MsX" id="r4G-WV-azJ"/>
+                <outlet property="currentData" destination="HWd-ei-z69" id="gF6-qm-B3F"/>
+                <outlet property="overImg" destination="3Bg-9L-6RQ" id="4Qq-7w-WM3"/>
+                <outlet property="rate" destination="QWJ-jt-Egl" id="cZr-Vt-flV"/>
+            </connections>
+            <point key="canvasLocation" x="-9.4202898550724647" y="90.401785714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="WFReward.bundle/overLogo" width="16" height="16"/>
+    </resources>
+</document>

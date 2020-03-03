@@ -1,0 +1,41 @@
+{
+  "name": "WFReward",
+  "version": "0.1.0",
+  "summary": "WFReward合作版",
+  "description": "'WFReward 合作版奖励库'",
+  "homepage": "https://github.com/WyICSP/WFReward",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wyxlh": "wy_wangyu163@163.com"
+  },
+  "source": {
+    "git": "https://github.com/WyICSP/WFReward.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "WFReward/Classes/**/*",
+  "resource_bundles": {
+    "WFReward": [
+      "WFReward/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "WFBasics": [
+
+    ],
+    "WFKitMain": [
+
+    ],
+    "WFKitLogin": [
+
+    ],
+    "MJRefresh": [
+
+    ]
+  }
+}

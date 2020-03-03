@@ -7,6 +7,10 @@
 //
 
 #import "WFViewController.h"
+#import "WFRewardBaseViewController.h"
+#import "WFRewardIncomeViewController.h"
+#import "UserData.h"
+#import "YFToast.h"
 
 @interface WFViewController ()
 
@@ -14,16 +18,18 @@
 
 @implementation WFViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [UserData userInfo:nil];
+    [YFToast showMessage:@"退出成功, 请重启 APP" inView:self.view];
 }
 
 @end

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WFRewardDetailSectionView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pf-SR-4Oh">
+                    <rect key="frame" x="10" y="0.0" width="394" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="额外奖励所有片区月营业额1%预计300元(根据上月营收)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4Z-4b-Hiv">
+                            <rect key="frame" x="15" y="12.5" width="364" height="15"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="P4Z-4b-Hiv" firstAttribute="centerY" secondItem="4pf-SR-4Oh" secondAttribute="centerY" id="CoL-wQ-E7e"/>
+                        <constraint firstAttribute="trailing" secondItem="P4Z-4b-Hiv" secondAttribute="trailing" constant="15" id="EeU-ss-bWa"/>
+                        <constraint firstItem="P4Z-4b-Hiv" firstAttribute="leading" secondItem="4pf-SR-4Oh" secondAttribute="leading" constant="15" id="I51-Tt-JQv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="4pf-SR-4Oh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GnR-dm-fuP"/>
+                <constraint firstItem="4pf-SR-4Oh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="XvP-91-TGV"/>
+                <constraint firstAttribute="bottom" secondItem="4pf-SR-4Oh" secondAttribute="bottom" id="mP8-r8-exV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4pf-SR-4Oh" secondAttribute="trailing" constant="10" id="rNo-ds-PIQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="contentsView" destination="4pf-SR-4Oh" id="atE-72-mVn"/>
+            </connections>
+            <point key="canvasLocation" x="111.59420289855073" y="77.678571428571431"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+framework module WFReward {
+  umbrella header "WFReward-umbrella.h"
+
+  export *
+  module * { export * }
+}

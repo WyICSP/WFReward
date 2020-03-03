@@ -7,12 +7,50 @@
 //
 
 #import "WFAppDelegate.h"
+#import "WFLoginViewController.h"
+#import "YFMainPublicModelAPI.h"
+#import "WFViewController.h"
+#import "WKNavigationController.h"
+#import "UserData.h"
+#import "WFHomeViewController.h"
 
 @implementation WFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+        //创建window
+        UIWindow *window                         = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        self.window                              = window;
+        [self.window setBackgroundColor:[UIColor whiteColor]];
+    if ([UserData isUserLogin]) {
+        UITabBarController *rootVC        = [YFMainPublicModelAPI rootTabBarCcontroller];
+        [YFMainPublicModelAPI addChildVC:[WFHomeViewController new] normalImageName:@"" selectedImageName:@"" title:@"首页"];
+        [YFMainPublicModelAPI addChildVC:[WFViewController new] normalImageName:@"" selectedImageName:@"" title:@"退出登录"];
+        [YFMainPublicModelAPI setGlobalBackGroundColor:UIColor.whiteColor];
+               [YFMainPublicModelAPI setNarBarGlobalTextColor:UIColor.blackColor andFontSize:18.0f];
+        self.window.rootViewController    = rootVC;
+        
+    }else {
+        WFLoginViewController *login     = [WFLoginViewController shareInstance];
+        self.window.rootViewController    = [[WKNavigationController alloc] initWithRootViewController:login];
+        [YFMainPublicModelAPI setGlobalBackGroundColor:UIColor.whiteColor];
+        [YFMainPublicModelAPI setNarBarGlobalTextColor:UIColor.blackColor andFontSize:18.0f];
+    }
+       
+        
+        
+    //    UITabBarController *rootVC        = [YFMainPublicModelAPI rootTabBarCcontroller];
+    //    [YFMainPublicModelAPI addChildVC:login normalImageName:@"" selectedImageName:@"" title:@"登录"];
+    //    [YFMainPublicModelAPI addChildVC:[WFUserCenterViewController new] normalImageName:@"" selectedImageName:@"" title:@"我的片区"];
+    //    [YFMainPublicModelAPI addChildVC:[WFUserCenterViewController new] normalImageName:@"" selectedImageName:@"" title:@"我的"];
+    //    [YFMainPublicModelAPI setGlobalBackGroundColor:[UIColor whiteColor]];
+    //    [YFMainPublicModelAPI setNarBarGlobalTextColor:[UIColor blackColor] andFontSize:18];
+    //
+    //    [self.window setRootViewController:rootVC];
+        
+        
+        [self.window makeKeyAndVisible];
     return YES;
 }
 
