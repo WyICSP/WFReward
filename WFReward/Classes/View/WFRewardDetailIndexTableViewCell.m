@@ -27,7 +27,7 @@ static NSString *const cellId = @"WFRewardDetailIndexTableViewCell";
     }else if (dataCount == 1){
         cell.bottomLine.hidden = NO;
     }else {
-        cell.bottomLine.hidden = NO;
+        cell.bottomLine.hidden = YES;
     }
     return cell;
 }
@@ -46,8 +46,20 @@ static NSString *const cellId = @"WFRewardDetailIndexTableViewCell";
 - (void)setModel:(WFRewardIndexItemModel *)model {
     self.currentData.text = model.currentValue;
     self.rate.text = model.awardsCheckTips;
-    // 如果是第一条数据 并且已经完成
-    if (self.index == 0 && model.awardsCheckStatus) {
+//    // 如果是第一条数据 并且已经完成
+//    if (self.index == 0 && model.awardsCheckStatus) {
+//        self.overImg.hidden = NO;
+//    }else {
+//        self.overImg.hidden = YES;
+//    }
+}
+
+- (void)bindToCellWithModel:(WFRewardIndexItemModel *)model
+          awardsCheckStatus:(BOOL)awardsCheckStatus {
+    self.currentData.text = model.currentValue;
+    self.rate.text = model.awardsCheckTips;
+    
+    if (self.index == 0 && awardsCheckStatus) {
         self.overImg.hidden = NO;
     }else {
         self.overImg.hidden = YES;

@@ -29,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)cellWithTableView:(UITableView *)tableView
                         indexPath:(NSIndexPath *)indexPath
                         dataCount:(NSInteger)dataCount;
+
+/// 绑定数据
+/// @param model 数据
+/// @param awardsCheckStatus 显示状态
+- (void)bindToCellWithModel:(WFRewardIndexItemModel *)model
+          awardsCheckStatus:(BOOL)awardsCheckStatus;
 @end
 
 NS_ASSUME_NONNULL_END

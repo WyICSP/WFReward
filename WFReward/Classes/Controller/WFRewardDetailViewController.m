@@ -15,6 +15,7 @@
 #import "WFRewardDetailHeadView.h"
 #import "WFRewardDetailSectionView.h"
 #import "WFRewardCenterDetailModel.h"
+#import "WFRewardDetailFooterView.h"
 #import "WFRewardDataTool.h"
 #import "WKConfig.h"
 
@@ -31,8 +32,6 @@
 @property (nonatomic, strong, nullable) UIView *navBarView;
  ///返回按钮
 @property (nonatomic, strong, nullable) UIButton *backBtn;
-///  查看按钮
-@property (nonatomic, strong, nullable) UIButton *lookBtn;
 /// title
 @property (nonatomic, strong, nullable) UILabel *titleLbl;
 @end
@@ -77,10 +76,6 @@
         self.sectionCount = self.mainModel.awardsIndex.count;
         // title
         self.titleLbl.text = self.mainModel.name;
-        if (self.mainModel.awardsIndex.count != 0 && [[[self.mainModel.awardsIndex safeObjectAtIndex:0] awardsIndexParams] count] != 0) {
-            WFRewardIndexItemModel *iModel = [[[self.mainModel.awardsIndex safeObjectAtIndex:0] awardsIndexParams] safeObjectAtIndex:0];
-            self.lookBtn.hidden = !iModel.awardsCheckStatus;
-        }
         [self.tableView reloadData];
     }];
 }
@@ -91,9 +86,9 @@
 }
 
 /// 查看明细
-- (void)lookBtnClick:(UIButton *)sender {
+- (void)lookBtnClick:(NSString *)detailId {
     WFRewardIncomeDetailViewController *detail = [[WFRewardIncomeDetailViewController alloc] init];
-    detail.awardsFinalId = self.mainModel.awardsConfigId;
+    detail.awardsFinalId = detailId;
     [self.navigationController pushViewController:detail animated:YES];
 }
 
@@ -115,8 +110,10 @@
         cell.model = self.mainModel;
         return cell;
     }
-    WFRewardDetailIndexTableViewCell *cell = [WFRewardDetailIndexTableViewCell cellWithTableView:tableView indexPath:indexPath dataCount:self.sectionCount];
-    cell.model = [[[self.mainModel.awardsIndex safeObjectAtIndex:indexPath.section] awardsIndexParams] safeObjectAtIndex:indexPath.row];
+    WFRewardDetailIndexTableViewCell *cell = [WFRewardDetailIndexTableViewCell cellWithTableView:tableView indexPath:indexPath dataCount:[[[self.mainModel.awardsIndex safeObjectAtIndex:indexPath.section] awardsIndexParams] count]];
+    WFRewardIndexItemModel *itemModel = [[[self.mainModel.awardsIndex safeObjectAtIndex:indexPath.section] awardsIndexParams] safeObjectAtIndex:indexPath.row];
+    BOOL awardsCheckStatus = [[self.mainModel.awardsIndex safeObjectAtIndex:indexPath.section] awardsCheckStatus];
+    [cell bindToCellWithModel:itemModel awardsCheckStatus:awardsCheckStatus];
     return cell;
 }
 
@@ -128,12 +125,35 @@
     return [UIView new];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (section != self.sectionCount) {
+        //只有复合要求的才有 footerview
+        WFRewardAwardsIndexModel *indexModel = [self.mainModel.awardsIndex safeObjectAtIndex:section];
+        if (indexModel.awardsCheckStatus) {
+            WFRewardDetailFooterView *footerView = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"WFRewardDetailFooterView" owner:nil options:nil] firstObject];
+            @weakify(self)
+            footerView.clickBtnBlock = ^{
+                @strongify(self)
+                [self lookBtnClick:indexModel.awardsFinalId];
+            };
+            return footerView;
+        }
+        return [UIView new];
+    }
+    return [UIView new];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return section == self.sectionCount ? CGFLOAT_MIN : 40.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 10.0f;
+    if (section != self.sectionCount) {
+         WFRewardAwardsIndexModel *indexModel = [self.mainModel.awardsIndex safeObjectAtIndex:section];
+         //只有复合要求的才有 footerview
+        return indexModel.awardsCheckStatus ? 38.0f : 10.0f;
+    }
+    return 38.0f;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -148,7 +168,6 @@
         _navBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, NavHeight)];
         _navBarView.backgroundColor = NavColor;
         [_navBarView addSubview:self.backBtn];
-        [_navBarView addSubview:self.lookBtn];
         [_navBarView addSubview:self.titleLbl];
     }
     return _navBarView;
@@ -192,24 +211,10 @@
     return _backBtn;
 }
 
-/// 查看明细
-- (UIButton *)lookBtn {
-    if (!_lookBtn) {
-        _lookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _lookBtn.frame = CGRectMake(ScreenWidth- 70, TopSpace, 60, 44.0f);
-        [_lookBtn setTitle:@"奖励明细" forState:0];
-        [_lookBtn addTarget:self action:@selector(lookBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        _lookBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-        [_lookBtn setTitleColor:UIColor.whiteColor forState:0];
-        _lookBtn.hidden = YES;
-    }
-    return _lookBtn;
-}
-
 /// title
 - (UILabel *)titleLbl {
     if (!_titleLbl) {
-        _titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(self.backBtn.width + 15, TopSpace, ScreenWidth-self.backBtn.width - self.lookBtn.width - 30, 44.0f)];
+        _titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(self.backBtn.width + 15, TopSpace, ScreenWidth-self.backBtn.width - 40 - 30, 44.0f)];
         _titleLbl.textColor = UIColor.whiteColor;
         _titleLbl.font = [UIFont boldSystemFontOfSize:16];
         _titleLbl.alpha = 0;

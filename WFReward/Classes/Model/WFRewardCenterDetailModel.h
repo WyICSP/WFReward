@@ -32,7 +32,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray *awardsIndexParams;
 /// 奖励标签
 @property (nonatomic, copy) NSString *awardsTips;
-
+/// 是否完成
+@property (nonatomic, assign) BOOL awardsCheckStatus;
+/// 奖励标签
+@property (nonatomic, copy) NSString *awardsFinalId;
 @end
 
 @interface WFRewardIndexItemModel : NSObject
@@ -40,8 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *awardsCheckTips;
 /// 当前值
 @property (nonatomic, copy) NSString *currentValue;
-/// 是否完成
-@property (nonatomic, assign) BOOL awardsCheckStatus;
+
 @end
 
 NS_ASSUME_NONNULL_END

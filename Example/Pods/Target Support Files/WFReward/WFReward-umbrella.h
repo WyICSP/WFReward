@@ -26,6 +26,7 @@
 #import "WFIncomeDetalEndlTableViewCell.h"
 #import "WFRewardChildTableViewCell.h"
 #import "WFRewardDetailArriveTableViewCell.h"
+#import "WFRewardDetailFooterView.h"
 #import "WFRewardDetailHeadView.h"
 #import "WFRewardDetailIndexTableViewCell.h"
 #import "WFRewardDetailSectionView.h"

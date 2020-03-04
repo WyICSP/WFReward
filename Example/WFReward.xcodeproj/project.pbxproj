@@ -553,7 +553,7 @@
 				GCC_PREFIX_HEADER = "WFReward/WFReward-Prefix.pch";
 				INFOPLIST_FILE = "WFReward/WFReward-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = io.dcloud.yunzhichongbusiness;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.WFReward-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
@@ -570,7 +570,7 @@
 				GCC_PREFIX_HEADER = "WFReward/WFReward-Prefix.pch";
 				INFOPLIST_FILE = "WFReward/WFReward-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = io.dcloud.yunzhichongbusiness;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.WFReward-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
