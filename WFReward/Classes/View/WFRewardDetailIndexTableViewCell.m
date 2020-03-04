@@ -58,6 +58,7 @@ static NSString *const cellId = @"WFRewardDetailIndexTableViewCell";
           awardsCheckStatus:(BOOL)awardsCheckStatus {
     self.currentData.text = model.currentValue;
     self.rate.text = model.awardsCheckTips;
+    self.currentTitle.text = model.currentTitle;
     
     if (self.index == 0 && awardsCheckStatus) {
         self.overImg.hidden = NO;

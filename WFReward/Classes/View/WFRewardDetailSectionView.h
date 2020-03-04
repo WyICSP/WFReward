@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WFRewardDetailSectionView : UIView
 /// contentsView
 @property (weak, nonatomic) IBOutlet UIView *contentsView;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 
 @end
 

@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *awardsCheckTips;
 /// 当前值
 @property (nonatomic, copy) NSString *currentValue;
+/// title
+@property (nonatomic, copy) NSString *currentTitle;
 
 @end
 

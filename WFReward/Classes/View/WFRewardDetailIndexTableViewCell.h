@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *overImg;
 /// 第几条数据
 @property (nonatomic, assign) NSInteger index;
+/// 当前值的
+@property (weak, nonatomic) IBOutlet UILabel *currentTitle;
 /// 赋值
 @property (nonatomic, strong) WFRewardIndexItemModel *model;
 /**初始化*/

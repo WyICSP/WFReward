@@ -99,6 +99,7 @@
             <connections>
                 <outlet property="bottomLine" destination="nSh-PI-MsX" id="r4G-WV-azJ"/>
                 <outlet property="currentData" destination="HWd-ei-z69" id="gF6-qm-B3F"/>
+                <outlet property="currentTitle" destination="edu-oe-Uro" id="8Zs-wU-5HM"/>
                 <outlet property="overImg" destination="3Bg-9L-6RQ" id="4Qq-7w-WM3"/>
                 <outlet property="rate" destination="QWJ-jt-Egl" id="cZr-Vt-flV"/>
             </connections>

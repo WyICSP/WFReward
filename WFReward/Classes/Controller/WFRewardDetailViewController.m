@@ -120,6 +120,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section != self.sectionCount) {
         WFRewardDetailSectionView *sectionView = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"WFRewardDetailSectionView" owner:nil options:nil] firstObject];
+        sectionView.title.text = [[self.mainModel.awardsIndex safeObjectAtIndex:section] awardsTips];
         return sectionView;
     }
     return [UIView new];
