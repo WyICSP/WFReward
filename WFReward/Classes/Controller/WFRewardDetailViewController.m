@@ -152,9 +152,9 @@
     if (section != self.sectionCount) {
          WFRewardAwardsIndexModel *indexModel = [self.mainModel.awardsIndex safeObjectAtIndex:section];
          //只有复合要求的才有 footerview
-        return indexModel.awardsCheckStatus ? 38.0f : 10.0f;
+        return indexModel.awardsCheckStatus ? 48.0f : 10.0f;
     }
-    return 38.0f;
+    return 10.0f;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
