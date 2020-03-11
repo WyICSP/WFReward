@@ -14,18 +14,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwQ-37-dhO">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.52156862749999999" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="140" id="0MM-Ug-XNL"/>
+                        <constraint firstAttribute="height" constant="150" id="0MM-Ug-XNL"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合伙人-长期合伙人奖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-Pa-ujk">
-                    <rect key="frame" x="110" y="15" width="155" height="20"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合伙人-长期合伙人奖" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hS-Pa-ujk">
+                    <rect key="frame" x="20" y="17" width="335" height="18"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -112,9 +112,10 @@
                 <constraint firstItem="iIA-MG-hpd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="MpK-z8-Wo8"/>
                 <constraint firstAttribute="trailing" secondItem="iIA-MG-hpd" secondAttribute="trailing" constant="5" id="RBB-4K-tDp"/>
                 <constraint firstItem="bBr-IO-opn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TDf-1L-EpS"/>
+                <constraint firstItem="7hS-Pa-ujk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VPy-o3-dit"/>
                 <constraint firstItem="bBr-IO-opn" firstAttribute="top" secondItem="iIA-MG-hpd" secondAttribute="bottom" constant="14.5" id="cbZ-qs-3cg"/>
                 <constraint firstItem="iIA-MG-hpd" firstAttribute="top" secondItem="7hS-Pa-ujk" secondAttribute="bottom" id="dhx-nb-ixF"/>
-                <constraint firstItem="7hS-Pa-ujk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="i78-2s-hJR"/>
+                <constraint firstItem="7hS-Pa-ujk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="17" id="i78-2s-hJR"/>
                 <constraint firstAttribute="trailing" secondItem="WwQ-37-dhO" secondAttribute="trailing" id="w66-x4-JIG"/>
                 <constraint firstItem="WwQ-37-dhO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wss-WJ-skt"/>
                 <constraint firstItem="7hS-Pa-ujk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ywf-zZ-7xa"/>

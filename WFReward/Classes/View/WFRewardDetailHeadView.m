@@ -11,6 +11,10 @@
 
 @implementation WFRewardDetailHeadView
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.title.adjustsFontSizeToFitWidth = YES;
+}
 
 - (void)setModel:(WFRewardCenterDetailModel *)model {
     self.title.text = model.name;

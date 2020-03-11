@@ -39,7 +39,7 @@ static NSString *const cellId = @"WFRewardChildTableViewCell";
     self.title.text = [NSString stringWithFormat:@"%@ ",model.name];
     self.bones.text = [NSString stringWithFormat:@"  %@  ",model.awardsTips];
     self.startTime.text = [NSString stringWithFormat:@"起止日期: %@-%@",model.startTime,model.endTime];
-    self.assessTime.text = [NSString stringWithFormat:@"考核日期: %@",model.roundTips];
+    self.assessTime.text = [NSString stringWithFormat:@"考核周期: %@",model.roundTips];
 }
 
 @end

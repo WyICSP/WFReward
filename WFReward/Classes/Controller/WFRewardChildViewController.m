@@ -51,15 +51,21 @@
     } failBlock:^{
         @strongify(self)
         [self.tableView.mj_footer endRefreshing];
+        [self.tableView.mj_header endRefreshing];
     }];
 }
 
 - (void)requestVipDataSuccessWith:(NSArray<WFRewardListModel *> * _Nonnull)models {
     // 结束刷新
     [self.tableView.mj_footer endRefreshing];
+    [self.tableView.mj_header endRefreshing];
     //将获取的数据添加到数组中
-    if (models.count != 0) [self.mainModels addObjectsFromArray:models];
-    
+    if (models.count != 0) {
+        if (self.pageNo == 1) {
+            [self.mainModels removeAllObjects];
+        }
+        [self.mainModels addObjectsFromArray:models];
+    }
     //如果没有数据隐藏 footer
     self.tableView.mj_footer.hidden = self.mainModels.count < 10 ? YES : NO;
     
@@ -121,6 +127,18 @@
             self.pageNo ++;
             [self getRewardList];
         }];
+        MJRefreshStateHeader *header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+            @strongify(self)
+            self.pageNo =1;
+            [self getRewardList];
+        }];
+        header.lastUpdatedTimeLabel.hidden = YES;
+        // 设置下拉刷新时的三种状态的文本
+        [header setTitle:@"下拉可以刷新" forState:MJRefreshStateIdle];
+        [header setTitle:@"松开立即刷新" forState:MJRefreshStatePulling];
+        [header setTitle:@"正在刷新数据中..." forState:MJRefreshStateRefreshing];
+        header.stateLabel.font = [UIFont boldSystemFontOfSize:14];
+        _tableView.mj_header = header;
         [self.view addSubview:_tableView];
     }
     return _tableView;

@@ -17,6 +17,7 @@
 #import "WFRewardCenterDetailModel.h"
 #import "WFRewardDetailFooterView.h"
 #import "WFRewardDataTool.h"
+#import "NSString+Regular.h"
 #import "WKConfig.h"
 
 @interface WFRewardDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -34,6 +35,8 @@
 @property (nonatomic, strong, nullable) UIButton *backBtn;
 /// title
 @property (nonatomic, strong, nullable) UILabel *titleLbl;
+/// title高度
+@property (nonatomic, assign) CGFloat titleLblHeight;
 @end
 
 @implementation WFRewardDetailViewController
@@ -76,6 +79,10 @@
         self.sectionCount = self.mainModel.awardsIndex.count;
         // title
         self.titleLbl.text = self.mainModel.name;
+        //获取 title 高度
+        CGSize size = [self.mainModel.name boundingRectWithSize:CGSizeMake(ScreenWidth-40.0f, LONG_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:15.0f]} context:nil].size;
+        self.titleLblHeight = size.height;
+        
         [self.tableView reloadData];
     }];
 }
@@ -194,6 +201,7 @@
 - (WFRewardDetailHeadView *)headView {
     if (!_headView) {
         _headView = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"WFRewardDetailHeadView" owner:nil options:nil] firstObject];
+        _headView.frame = CGRectMake(0, 0, ScreenWidth, self.titleLblHeight > 19.0f ? 276.0f+18.0f : 276.0f);
         _headView.bLine.backgroundColor = NavColor;
         _headView.model = self.mainModel;
     }
