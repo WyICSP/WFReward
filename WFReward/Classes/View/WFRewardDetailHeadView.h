@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///  起始日期
 @property (weak, nonatomic) IBOutlet UILabel *startTime;
 /// 考核时间
-@property (weak, nonatomic) IBOutlet UILabel *kaoTime;
+//@property (weak, nonatomic) IBOutlet UILabel *kaoTime;
 /// 结算时间
 @property (weak, nonatomic) IBOutlet UILabel *settleTime;
 /// 赋值

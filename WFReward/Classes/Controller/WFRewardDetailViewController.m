@@ -201,8 +201,9 @@
 - (WFRewardDetailHeadView *)headView {
     if (!_headView) {
         _headView = [[[NSBundle bundleForClass:[self class]] loadNibNamed:@"WFRewardDetailHeadView" owner:nil options:nil] firstObject];
-        _headView.frame = CGRectMake(0, 0, ScreenWidth, self.titleLblHeight > 19.0f ? 276.0f+18.0f : 276.0f);
+        _headView.frame = CGRectMake(0, 0, ScreenWidth, self.titleLblHeight > 19.0f ? 251.0f+18.0f : 251.0f);
         _headView.bLine.backgroundColor = NavColor;
+        _headView.title.textAlignment = self.titleLblHeight > 19.0f ? NSTextAlignmentLeft : NSTextAlignmentCenter;
         _headView.model = self.mainModel;
     }
     return _headView;

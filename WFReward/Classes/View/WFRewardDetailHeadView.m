@@ -19,7 +19,7 @@
 - (void)setModel:(WFRewardCenterDetailModel *)model {
     self.title.text = model.name;
     self.startTime.text = model.time;
-    self.kaoTime.text = model.roundTips;
+//    self.kaoTime.text = model.roundTips;
     self.settleTime.text = model.settleExplain;
 }
 
