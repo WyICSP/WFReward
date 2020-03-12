@@ -38,7 +38,7 @@ PODS:
   - WFKitMain (0.2.6):
     - dsBridge
     - WFBasics
-  - WFReward (0.1.5):
+  - WFReward (0.1.6):
     - MJRefresh
     - WFBasics
     - WFKitLogin
@@ -80,7 +80,7 @@ SPEC CHECKSUMS:
   WFHomeAddress: 4eb27df8a873af9161d147f8b10a1d50ba725467
   WFKitLogin: da4bb7ffaba887b7ba345b737227beb6788d8882
   WFKitMain: 0fa22bfb094a15e8ccdc0bd11db57e264b40d3ad
-  WFReward: d4ac75c6b701477707e63d51d94ce0767ee2c573
+  WFReward: 6fd4231f2a4d5643e627e24bae924ec2fd129ed3
   WKFunComponents: a4cde3e92b1c5841be91a9eefd7968c8ce903f73
   WYAutoLayout: 3cb136ddc2efa9faaecf15876e6a9b2a6fd7c6cb
 
