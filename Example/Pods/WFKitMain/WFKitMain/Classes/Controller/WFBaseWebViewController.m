@@ -75,7 +75,7 @@
 #pragma mark webView
 - (DWKWebView *)dwebview {
     if (!_dwebview) {
-        _dwebview = [[DWKWebView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-NavHeight)];
+        _dwebview = [[DWKWebView alloc] initWithFrame:CGRectMake(0, NavHeight, ScreenWidth, ScreenHeight-NavHeight)];
 //        [_dwebview addJavascriptObject:[[JsApiTest alloc] init] namespace:nil];
         _dwebview.navigationDelegate = self;
         [_dwebview setDebugMode:true];

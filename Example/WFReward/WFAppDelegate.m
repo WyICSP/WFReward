@@ -20,8 +20,8 @@
 {
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
         //创建window
-        UIWindow *window                         = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        self.window                              = window;
+        UIWindow *window                  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        self.window                       = window;
         [self.window setBackgroundColor:[UIColor whiteColor]];
     if ([UserData isUserLogin]) {
         UITabBarController *rootVC        = [YFMainPublicModelAPI rootTabBarCcontroller];
@@ -38,7 +38,6 @@
         [YFMainPublicModelAPI setNarBarGlobalTextColor:UIColor.blackColor andFontSize:18.0f];
     }
        
-        
         
     //    UITabBarController *rootVC        = [YFMainPublicModelAPI rootTabBarCcontroller];
     //    [YFMainPublicModelAPI addChildVC:login normalImageName:@"" selectedImageName:@"" title:@"登录"];
