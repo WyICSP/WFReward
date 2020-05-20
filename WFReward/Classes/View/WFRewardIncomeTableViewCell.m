@@ -8,6 +8,7 @@
 
 #import "WFRewardIncomeTableViewCell.h"
 #import "WFRewardListModel.h"
+#import "NSString+Regular.h"
 
 @implementation WFRewardIncomeTableViewCell
 
@@ -34,8 +35,13 @@ static NSString *const cellId = @"WFRewardIncomeTableViewCell";
 
 - (void)setModels:(WFCrashRewardListModel *)models {
     self.title.text = models.awardsName;
-    self.money.text = [NSString stringWithFormat:@"+%@",@(models.awardsMoney.floatValue/100.0)];
-    self.totalPrice.text = [NSString stringWithFormat:@"%@",@(models.settleMoney.floatValue/100.0)];
+    
+    NSString *awardsMoney = [NSString stringWithFormat:@"%.3f",[NSString decimalPriceWithDouble:models.awardsMoney.doubleValue/1000]];
+    self.money.text = awardsMoney;
+    
+    NSString *settleMoney = [NSString stringWithFormat:@"%.3f",[NSString decimalPriceWithDouble:models.settleMoney.doubleValue/1000]];
+    self.totalPrice.text = settleMoney;
+    
     self.time.text = [NSString stringWithFormat:@"结算时间: %@",models.grantTime];
 }
 

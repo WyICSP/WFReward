@@ -8,12 +8,16 @@
 
 #import "WFIncomeDetailHeadView.h"
 #import "WFRewardDetailModel.h"
+#import "NSString+Regular.h"
 
 @implementation WFIncomeDetailHeadView
 
 - (void)setModel:(WFRewardDetailModel *)model {
     self.title.text = model.awardsName.length == 0 ? model.groupName : model.awardsName;
-    self.money.text = [NSString stringWithFormat:@"+%@",@(model.awardsMoney.floatValue/100.0f)];
+    
+    NSString *awardsMoney = [NSString stringWithFormat:@"%.3f",[NSString decimalPriceWithDouble:model.awardsMoney.doubleValue/1000]];
+    self.money.text = [NSString stringWithFormat:@"+%@",awardsMoney];
+    
     self.status.text = model.awardsStatus ? @"交易成功" : @"交易失败";
 }
 
