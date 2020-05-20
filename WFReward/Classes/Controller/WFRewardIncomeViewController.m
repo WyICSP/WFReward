@@ -12,6 +12,7 @@
 #import "WFRewardIncomeDetailViewController.h"
 #import "WFRewardDataTool.h"
 #import "WFRewardListModel.h"
+#import "NSString+Regular.h"
 #import "MJRefresh.h"
 #import "WKConfig.h"
 
@@ -146,11 +147,13 @@
         _headView.frame = CGRectMake(0, 0, ScreenWidth, KHeight(147.0f)+10);
         if (self.type == 0) {
             //奖励金
-            _headView.money.text = [NSString stringWithFormat:@"%@",@(self.hModel.awardsMoney.floatValue/100.0f)];
+            NSString *awardsMoney = [NSString stringWithFormat:@"%.3f",[NSString decimalPriceWithDouble:self.hModel.awardsMoney.doubleValue/1000]];
+            _headView.money.text = awardsMoney;
             _headView.title.text = @"奖励收入(元)";
         }else {
             //活动金
-            _headView.money.text = [NSString stringWithFormat:@"%@",@(self.hModel.activityMoney.floatValue/100.0f)];
+            NSString *activityMoney = [NSString stringWithFormat:@"%.3f",[NSString decimalPriceWithDouble:self.hModel.activityMoney.doubleValue/1000]];
+            _headView.money.text = activityMoney;
             _headView.title.text = @"活动金收入(元)";
         }
     }

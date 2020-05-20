@@ -92,6 +92,7 @@
         _contentView.pagingEnabled = YES;
         _contentView.bounces = NO;
         _contentView.showsHorizontalScrollIndicator = FALSE;
+        _contentView.scrollEnabled = NO;
         [self.view insertSubview:_contentView atIndex:0];
         _contentView.contentOffset = CGPointMake(0*ScreenWidth, 0);
         //添加第一个控制器的view

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 开始时间
 @property (weak, nonatomic) IBOutlet UILabel *startTime;
 /// 考核时间
-@property (weak, nonatomic) IBOutlet UILabel *assessTime;
+//@property (weak, nonatomic) IBOutlet UILabel *assessTime;
 /// model
 @property (nonatomic, strong) WFRewardListModel *model;
 /**初始化*/

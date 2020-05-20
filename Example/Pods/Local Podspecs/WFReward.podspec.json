@@ -1,6 +1,6 @@
 {
   "name": "WFReward",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "WFReward合作版",
   "description": "'WFReward 合作版奖励库'",
   "homepage": "https://github.com/WyICSP/WFReward",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/WyICSP/WFReward.git",
-    "tag": "0.1.6"
+    "tag": "0.1.7"
   },
   "platforms": {
     "ios": "9.0"
